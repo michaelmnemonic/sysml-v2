@@ -2,16 +2,20 @@
   description = "Experiement with SysML v. 2.0";
 
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-24.11";
   };
 
-  outputs = { self, nixpkgs }: {
-
-  devShell.aarch64-linux = nixpkgs.legacyPackages.aarch64-linux.pkgs.mkShell {
-      buildInputs = with nixpkgs.legacyPackages.aarch64-linux.pkgs; [
-        jdk23_headless
-        conda
+  outputs = {
+    self,
+    nixpkgs,
+  }: let
+    pkgs = nixpkgs.legacyPackages.aarch64-linux.pkgs;
+  in {
+    devShell.aarch64-linux = pkgs.mkShell {
+      buildInputs = with pkgs; [
+        eclipses.eclipse-platform
+        graphviz
       ];
+    };
   };
-};
 }
