@@ -1,8 +1,13 @@
 package Structure {
     // PartDefinition not implemted ;-(
-    //part def 'Drone';
+    part def Drone ;
 
-    part drone;
+    part drone {
+        attribute batteryLevel;
+
+        // portUsage not supported?
+        //port power;
+    }
     part warehouse {
         part deliveryPackages;
     }
