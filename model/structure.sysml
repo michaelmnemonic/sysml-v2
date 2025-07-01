@@ -1,14 +1,15 @@
-package Structure {
-    // PartDefinition not implemted ;-(
-    part def Drone ;
-
-    part drone {
-        attribute batteryLevel;
-
-        // portUsage not supported?
-        //port power;
+package ROOT {
+    package Types {
+        part def BatteryPoweredDevice {
+            attribute batteryLevel;
+        }
     }
-    part warehouse {
-        part deliveryPackages;
+    package Structure {
+        import Types::*;
+        part drone : BatteryPoweredDevice {
+        }
+        part warehouse {
+            part deliveryPackages;
+        }
     }
 }
