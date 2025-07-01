@@ -1,4 +1,9 @@
 package Structure {
+    // PartDefinition not implemted ;-(
+    //part def 'Drone';
+
     part drone;
-    part warehose;
+    part warehouse {
+        part deliveryPackages;
+    }
 }

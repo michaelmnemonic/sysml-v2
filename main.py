@@ -1,4 +1,4 @@
-from sysml2py import Attribute, Part, Item, Model, Package
+from sysml2py import Model
 
 def main():
     with open("model/structure.sysml", "r") as f:

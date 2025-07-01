@@ -1,4 +1,4 @@
-package Type {
-    part def 'Drone'
-    part def 'Warehouse'
+package Types {
+    part def 'Drone';
+    part def 'Warehouse';
 }
