@@ -3,21 +3,8 @@ from sysml2py import load_grammar as loads
 from sysml2py.formatting import classtree
 
 def main():
-    text = """package Structure {
-        // PartDefinition not implemted ;-(
-        part def Drone ;
-
-        part drone {
-            attribute batteryLevel;
-
-            // portUsage not supported?
-            //port power;
-        }
-        part warehouse {
-            part deliveryPackages;
-        }
-    }"""
-    model = loads(text)
+    with open('model/structure.sysml', 'r') as f:
+        model = loads(f)
     print(classtree(model).dump())
 
 if __name__ == "__main__":
