@@ -59,7 +59,7 @@ def main():
     with open('model/structure.sysml', 'r') as f:
         model = Model().load(f)
 
-    print(classtree(model).dump())
+    warehouse = model._get_child("ROOT.Structure.warehouse")
 
     for el in model.get("elements", []):
         print(f"Type: {el.get('type')}, Name: {el.get('name')}, ID: {el.get('id')}")
