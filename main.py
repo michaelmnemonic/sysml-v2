@@ -57,9 +57,7 @@ def main():
         grammar = load_grammar(f)
 
     with open('model/structure.sysml', 'r') as f:
-        model = Model()
-        model.grammar = grammar
-        model = load(f)
+        model = Model().load(f)
 
     print(classtree(model).dump())
 
