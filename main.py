@@ -3,6 +3,9 @@ from sysml2py import Model, Package, Part, load_grammar, load
 from sysml2py.formatting import classtree
 from sysml2py import Part
 
+from pysysml2.modeling.model import Model as PySysML2Model
+from anytree import Node, RenderTree, NodeMixin, AsciiStyle, PreOrderIter, PostOrderIter
+
 def get_all_parts(model):
     """
     Recursively traverse the model and return all Part objects.
@@ -59,10 +62,28 @@ def main():
     with open('model/structure.sysml', 'r') as f:
         model = Model().load(f)
 
+    model_pysysml2 = PySysML2Model().from_sysml2_file("model/structure.sysml")
+
     warehouse = model._get_child("ROOT.Structure.warehouse")
 
+    tree = RenderTree(model_pysysml2)
+
+    print(RenderTree(model_pysysml2, style=AsciiStyle()))
+
+    for pre, fill, node in tree:
+        if type(node) is not PySysML2Model:
+            print("{}".format(node.name))
+
+    for node in PreOrderIter(model_pysysml2):
+        if type(node) is not PySysML2Model:
+            print('PostOrderIter: ' + node.name + '( type: ' + str(node.sysml2_type) + ', idx: ' + str(node.idx) + ')')
+
+    for node in PostOrderIter(model_pysysml2):
+        if type(node) is not 'pysysml2.modeling.model.Model':
+            print('PostOrderIter: ' + node.name + '( type: ' + str(node.sysml2_type) + ', idx: ' + str(node.idx) + ')')
+
     for el in model.get("elements", []):
-        print(f"Type: {el.get('type')}, Name: {el.get('name')}, ID: {el.get('id')}")
+        print(f"Type: {el.get('type')}, Name: {el.get('name')}, ID: {el.get('Add pysysml2id')}")
 
     model_list = list(NestedDictValues(model))
 
