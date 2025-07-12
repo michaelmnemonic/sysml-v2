@@ -4,5 +4,5 @@
 ## Interfaces
 | Name | Description |
 |------|-------------|
-| PySysML2_GENERATED_NAME_14_11@14_11 | |
-| ElectricPower@15_11 | |
+| PySysML2_GENERATED_NAME_15_11@15_11 | |
+| ElectricPower@16_11 | |

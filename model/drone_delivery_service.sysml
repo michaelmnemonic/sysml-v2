@@ -19,15 +19,15 @@ package 'Drone Delivery Service' {
     package Types {
         part def 'BatteryPoweredDevice'{
             doc /* Device powered by a battery */
-            attribute askdj;
+            attribute 'askdj' : String;
         }
         port def 'ElectricPower' {
             doc /* Allows exchange of electrical power */
-            attribute qlwd;
+            attribute qlwd : String;
         }
         port def 'DeliveryPort' {
             doc /* Allows exchange of deliveries */
-            attribute ams;
+            attribute ams : String;
         }
     }
 }
