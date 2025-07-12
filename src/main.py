@@ -30,15 +30,5 @@ def main():
     with open('README.md', 'w') as file:
         file.write(template.render(port_defs=port_defs))
 
-    for node in PreOrderIter(model):
-        if isinstance(node, Model):
-            continue
-        print('PostOrderIter: ' + node.name + '( type: ' + str(node.sysml2_type) + ', idx: ' + str(node.idx) + ')')
-
-    for node in PostOrderIter(model):
-        if isinstance(node, Model):
-            continue
-        print('PostOrderIter: ' + node.name + '( type: ' + str(node.sysml2_type) + ', idx: ' + str(node.idx) + ')')
-
 if __name__ == "__main__":
     main()
