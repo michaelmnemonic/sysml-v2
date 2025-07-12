@@ -1,12 +1,10 @@
 [project]
 name = "sysml-v2"
 version = "0.1.0"
-description = "Add your description here"
+description = "Experiements with sysml-v2"
 readme = "README.md"
 requires-python = ">=3.12"
-dependencies = [
-    "pysysml2",
-]
+dependencies = ["pysysml2"]
 
 [tool.pyright]
 venvPath = "."
