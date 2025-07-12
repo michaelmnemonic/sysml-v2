@@ -1,14 +1,15 @@
 from pysysml2.modeling.model import Model as Model
 from anytree import Node, RenderTree, NodeMixin, AsciiStyle, PreOrderIter, PostOrderIter
 
+from pathlib import Path
+
 def main():
-    # Load model
-    model = Model().from_sysml2_file("model/structure.sysml")
-    tree = RenderTree(model)
+    # load model
+    model = Model().from_sysml2_file("model/drone_delivery_service.sysml")
 
     print(RenderTree(model, style=AsciiStyle()))
 
-    for pre, fill, node in tree:
+    for pre, fill, node in RenderTree(model):
         if isinstance(node, Model):
             continue
         print("{}".format(node.name))
