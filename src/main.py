@@ -1,4 +1,4 @@
-from pysysml2.modeling.model import Model, Port
+from pysysml2.modeling.model import Model, Port, Doc
 from anytree import Node, RenderTree, NodeMixin, AsciiStyle, PreOrderIter, PostOrderIter
 
 from jinja2 import Environment, PackageLoader, FileSystemLoader, select_autoescape
@@ -20,15 +20,21 @@ def main():
     )
 
     port_defs = {}
+    doc = {}
     for node in PreOrderIter(model):
         if isinstance(node, Port):
-            port_defs[node.name] = node
+            description = "";
+            for sibling in node.siblings:
+                if isinstance(sibling, Doc):
+                    description += str(sibling.element_text)
+            port_defs[node.name] = {'description': description.strip()}
+
         # FIXME: grab doc from element_text
 
     template = env.get_template("README.md.j2")
 
     with open('README.md', 'w') as file:
-        file.write(template.render(port_defs=port_defs))
+        file.write(template.render(port_defs=port_defs, model=model))
 
 if __name__ == "__main__":
     main()
