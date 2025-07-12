@@ -4,23 +4,30 @@ package 'Drone Delivery Service' {
         */
     package 'Structure' {
         doc /* This package contains a description of the structure of the system. */
-        part 'drone': 'BatteryPoweredDevice';
-        part 'warehouse' {
-            part 'chargingStation';
-            part 'pickupStation';
+
+        private import Types::*;
+
+        part 'Drone Delivery Service' {
+            part 'drone': 'BatteryPoweredDevice';
+            part 'warehouse' {
+                part 'chargingStation';
+                part 'pickupStation';
+            }
+            part 'control';
         }
-        part 'control';
     }
     package Types {
-        part def 'BatteryPoweredDevice' {
-            attribute 'batteryLevel';
+        part def 'BatteryPoweredDevice'{
+            doc /* Device powered by a battery */
+            attribute askdj;
         }
         port def 'ElectricPower' {
             doc /* Allows exchange of electrical power */
-            attribute aksdj;
+            attribute qlwd;
         }
         port def 'DeliveryPort' {
             doc /* Allows exchange of deliveries */
+            attribute ams;
         }
     }
 }
