@@ -23,6 +23,7 @@ def main():
     for node in PreOrderIter(model):
         if isinstance(node, Port):
             port_defs[node.name] = node
+        # FIXME: grab doc from element_text
 
     template = env.get_template("README.md.j2")
 
