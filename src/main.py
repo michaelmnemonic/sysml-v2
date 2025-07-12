@@ -7,7 +7,7 @@ def main():
     # load model
     model = Model().from_sysml2_file("model/drone_delivery_service.sysml")
 
-    print(RenderTree(model, style=AsciiStyle()))
+    model.to_png()
 
     for pre, fill, node in RenderTree(model):
         if isinstance(node, Model):
