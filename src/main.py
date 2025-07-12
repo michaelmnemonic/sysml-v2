@@ -1,5 +1,7 @@
-from pysysml2.modeling.model import Model as Model
+from pysysml2.modeling.model import Model, Port
 from anytree import Node, RenderTree, NodeMixin, AsciiStyle, PreOrderIter, PostOrderIter
+
+from jinja2 import Environment, PackageLoader, FileSystemLoader, select_autoescape
 
 from pathlib import Path
 
@@ -9,10 +11,23 @@ def main():
 
     model.to_png()
 
-    for pre, fill, node in RenderTree(model):
-        if isinstance(node, Model):
-            continue
-        print("{}".format(node.name))
+    # Set up the Jinja2 environment for template rendering
+    env = Environment(
+        loader=FileSystemLoader("templates"),
+        autoescape=select_autoescape(),
+        lstrip_blocks = True,
+        trim_blocks= True
+    )
+
+    port_defs = {}
+    for node in PreOrderIter(model):
+        if isinstance(node, Port):
+            port_defs[node.name] = node
+
+    template = env.get_template("README.md.j2")
+
+    with open('README.md', 'w') as file:
+        file.write(template.render(port_defs=port_defs))
 
     for node in PreOrderIter(model):
         if isinstance(node, Model):
