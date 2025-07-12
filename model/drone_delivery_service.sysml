@@ -2,6 +2,9 @@ package 'Drone Delivery Service' {
     doc /*  This model descripes a delivery service using drones.
             Drones pick up deliveries from a ware house and transport them to a destination.
         */
+
+    private import ScalarValues::*;
+
     package 'Structure' {
         doc /* This package contains a description of the structure of the system. */
 
