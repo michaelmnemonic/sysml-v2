@@ -33,7 +33,7 @@ def main():
     template = env.get_template("README.md.j2")
 
     with open('README.md', 'w') as file:
-        file.write(template.render(port_defs=get_port_defs(model), model=model))
+        file.write(template.render(port_defs=get_port_defs(model)))
 
 if __name__ == "__main__":
     main()
