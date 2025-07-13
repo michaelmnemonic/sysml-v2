@@ -10,5 +10,3 @@ This chapter provides a table listing all interface types defined for this syste
 
 | Name | Description |
 |------|-------------|
-| PySysML2_GENERATED_NAME_16_12@16_12 | Allows exchange of electrical power |
-| ElectricPower@17_12 | Allows exchange of electrical power |
