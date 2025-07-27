@@ -4,12 +4,9 @@ package DroneDeliveryService {
     package Structure{
         doc /*System architecture defining core components and relationships, including drones, warehouses, and control systems */
 
-        part def BatteryPoweredDevice {
-            doc /* Base component for battery-powered devices with power management and battery status monitoring */
-        }
         part 'Drone Delivery Service' {
             doc /* Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management */
-            part 'drone': BatteryPoweredDevice {
+            part 'Drone' {
                 port PowerPort  {
                     doc /* Electrical interface for charging drone's battery, supporting wired/wireless charging and status monitoring */
                 }
