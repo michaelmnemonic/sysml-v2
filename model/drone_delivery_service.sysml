@@ -7,6 +7,7 @@ package DroneDeliveryService {
         part 'Drone Delivery Service' {
             doc /* Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management */
             part 'Drone' {
+                doc /* Represents an individual autonomous drone used for package delivery, equipped with navigation systems, battery, and payload capacity */
                 port 'Power port'  {
                     doc /* Electrical interface for charging drone's battery, supporting wired/wireless charging and status monitoring */
                 }
