@@ -4,12 +4,21 @@
 
 ## Structure
 
+### Overview
+
 This chapter provides a table listing all parts defined for this system, including their names and descriptions.
 
 | Name | Description |
 |------|-------------|
 {% for name, properties in parts.items() %}
 | {{name}} | {{properties['description']}} |
+{% endfor %}
+
+{% for name, properties in parts.items() %}
+### Element "{{name}}"
+ 
+{{properties['description']}}
+
 {% endfor %}
 
 

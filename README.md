@@ -4,6 +4,8 @@
 
 ## Structure
 
+### Overview
+
 This chapter provides a table listing all parts defined for this system, including their names and descriptions.
 
 | Name | Description |
@@ -14,6 +16,31 @@ This chapter provides a table listing all parts defined for this system, includi
 | Charging station | Automated charging infrastructure with wireless pads, health monitoring, queue management, and backup power |
 | Pickup station | Operational hub for drone deployment with automated docking, conveyors, status checks, and route assignments |
 | Control | Centralized management system for real-time tracking, route optimization, package prioritization, fleet allocation, and warehouse integration |
+
+### Element "Drone Delivery Service"
+ 
+Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management
+
+### Element "Drone"
+ 
+Represents an individual autonomous drone used for package delivery, equipped with navigation systems, battery, and payload capacity
+
+### Element "Warehouse"
+ 
+Central logistics hub managing drone operations and package storage with maintenance stations
+
+### Element "Charging station"
+ 
+Automated charging infrastructure with wireless pads, health monitoring, queue management, and backup power
+
+### Element "Pickup station"
+ 
+Operational hub for drone deployment with automated docking, conveyors, status checks, and route assignments
+
+### Element "Control"
+ 
+Centralized management system for real-time tracking, route optimization, package prioritization, fleet allocation, and warehouse integration
+
 
 
 ## Interfaces
