@@ -7,10 +7,10 @@ package DroneDeliveryService {
         part 'Drone Delivery Service' {
             doc /* Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management */
             part 'Drone' {
-                port PowerPort  {
+                port 'Power port'  {
                     doc /* Electrical interface for charging drone's battery, supporting wired/wireless charging and status monitoring */
                 }
-                port DeliveryHolder {
+                port 'Delivery holder' {
                     doc /* Mechanical interface for automated package handling with weight/size verification and navigation integration */
                 }
             }
@@ -23,7 +23,7 @@ package DroneDeliveryService {
                     doc /* Operational hub for drone deployment with automated docking, conveyors, status checks, and route assignments  */
                 }
             }
-            part 'control' {
+            part 'Control' {
                 doc /* Centralized management system for real-time tracking, route optimization, package prioritization, fleet allocation, and warehouse integration  */
             }
         }
