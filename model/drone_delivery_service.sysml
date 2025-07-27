@@ -1,26 +1,34 @@
-import ScalarValues::*;
-
-package DroneDeliveryService{
-    doc
-    /*
-     * This model descripes a delivery service using drones.
-     * Drones pick up deliveries from a ware house and transport them to a destination.
-     */
+package DroneDeliveryService {
+    doc /* High-level system architecture for a drone-based delivery service with automated package transportation, battery management, and logistics coordination */
 
     package Structure{
-        doc /* This package contains a description of the structure of the system. */
+        doc /*System architecture defining core components and relationships, including drones, warehouses, and control systems */
 
         part def BatteryPoweredDevice {
-            doc /* Device powered by a battery */
-            attribute 'askdj' : String;
+            doc /* Base component for battery-powered devices with power management and battery status monitoring */
         }
         part 'Drone Delivery Service' {
-            part 'drone': BatteryPoweredDevice;
-            part 'warehouse' {
-                part 'chargingStation';
-                part 'pickupStation';
+            doc /* Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management */
+            part 'drone': BatteryPoweredDevice {
+                port PowerPort  {
+                    doc /* Electrical interface for charging drone's battery, supporting wired/wireless charging and status monitoring */
+                }
+                port DeliveryHolder {
+                    doc /* Mechanical interface for automated package handling with weight/size verification and navigation integration */
+                }
             }
-            part 'control';
+            part 'Warehouse' {
+                doc /* Central logistics hub managing drone operations and package storage with maintenance stations */
+                part 'Charging station' {
+                    doc /* Automated charging infrastructure with wireless pads, health monitoring, queue management, and backup power */
+                }
+                part 'Pickup station' {
+                    doc /* Operational hub for drone deployment with automated docking, conveyors, status checks, and route assignments  */
+                }
+            }
+            part 'control' {
+                doc /* Centralized management system for real-time tracking, route optimization, package prioritization, fleet allocation, and warehouse integration  */
+            }
         }
     }
 }
