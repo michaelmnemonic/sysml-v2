@@ -9,7 +9,7 @@ This chapter provides a table listing all parts defined for this system, includi
 | Name | Description |
 |------|-------------|
 | Drone Delivery Service | Complete delivery system with drone fleet, warehouse infrastructure, and centralized control for logistics management |
-| Drone |  |
+| Drone | Represents an individual autonomous drone used for package delivery, equipped with navigation systems, battery, and payload capacity |
 | Warehouse | Central logistics hub managing drone operations and package storage with maintenance stations |
 | Charging station | Automated charging infrastructure with wireless pads, health monitoring, queue management, and backup power |
 | Pickup station | Operational hub for drone deployment with automated docking, conveyors, status checks, and route assignments |
