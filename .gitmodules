@@ -1,0 +1,3 @@
+[submodule "SysML-v2-API-Services"]
+	path = SysML-v2-API-Services
+	url = https://github.com/Systems-Modeling/SysML-v2-API-Services.git
