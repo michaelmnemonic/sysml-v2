@@ -3,10 +3,7 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs?ref=nixos-unstable";
-    sysml-v2 = {
-      url = "github:DLR-FT/sysml-v2-nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    sysml-v2.url = "github:DLR-FT/sysml-v2-nix";
   };
 
   outputs =
