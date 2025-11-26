@@ -4,6 +4,13 @@
       "python": {
         "pythonPath": ".venv/bin/python"
       }
+    },
+    "nil": {
+      "settings": {
+        "diagnostics": {
+          "ignored": ["unused_binding"]
+        }
+      }
     }
   },
   "pyright": {
@@ -11,6 +18,11 @@
       "python": {
         "pythonPath": ".venv/bin/python"
       }
+    }
+  },
+  "languages": {
+    "Nix": {
+      "language_servers": ["nil", "!nixd"]
     }
   }
 }
